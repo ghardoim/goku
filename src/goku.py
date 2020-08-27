@@ -8,7 +8,7 @@ numero_da_publicacao_do_sorteio = int(file.le_info("resource/numero_publicacao.t
 qnt_de_amigos_por_comentario = int(file.le_info("resource/amigos_por_comentario.txt"))
 qnt_de_comentarios = int(file.le_info("resource/qnt_de_comentarios.txt"))
 pagina_do_sorteio = file.le_info("resource/pagina_sorteio.txt")
-browser = file.le_info("resource/navegador.txt")
+browser = "edge" # file.le_info("resource/navegador.txt")
 amigos = file.le_info("resource/amigos.txt")
 
 def kamehameha():

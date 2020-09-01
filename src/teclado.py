@@ -9,24 +9,21 @@ def enter(tempo):
   auto.press("enter")
   time.sleep(tempo)
 
-def enter_ctrl(tempo, letra):
-  enter(tempo)
-  ctrl(letra)
-
 def tab(vezes, shift):
   for tab in range(vezes):
     auto.hotkey(shift, "tab")
 
-def esc():
-  auto.press("esc")
+def abre_janela(janela):
+  auto.press("win")
+  auto.write(janela)
 
 def fecha_janela(tempo):
   time.sleep(tempo)
   auto.hotkey("alt", "f4")
+  enter(tempo = 1)
 
-def abre_janela(janela):
-  auto.press("win")
-  auto.write(janela)
+def esc():
+  auto.press("esc")
 
 def escreve(tempo, texto):
   time.sleep(tempo)

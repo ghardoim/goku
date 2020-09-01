@@ -16,6 +16,7 @@ def tab(vezes, shift):
 def abre_janela(janela):
   auto.press("win")
   auto.write(janela)
+  enter(tempo = 1)
 
 def fecha_janela(tempo):
   time.sleep(tempo)

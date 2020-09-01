@@ -1,13 +1,12 @@
 from sorteio import Sorteio
 import instagram as insta
-import pyautogui as auto
 import teclado as tecla
-import time as time
 
-sorteio = Sorteio("resource/sorteio.json")
 browser = "edge"
 
 def kamehameha():
+  sorteio = Sorteio("resource/sorteio.json")
+
   print("Oi, eu sou o Goku!")
   print("Levante as mãos e me ajude a fazer a genki dama enquanto eu faço uns comentários para vc!")
   print(sorteio)
@@ -19,11 +18,11 @@ def kamehameha():
 
   tecla.abre_janela(browser)
   tecla.ctrl("l")
-  tecla.escreve(tempo = 1, texto = f"instagram.com/{sorteio.pagina}/")
+  tecla.escreve(tempo = 5, texto = f"instagram.com/{sorteio.pagina}/")
   tecla.enter(tempo = 3)
   tecla.ctrl("f")
-  tecla.escreve(1, "publicacoes")
-  tecla.enter(tempo = 2)
+  tecla.escreve(3, "publicacoes")
+  tecla.enter(tempo = 3)
   tecla.esc()
   tecla.tab(2 + sorteio.publicacao, "")
   tecla.enter(tempo = 3)
@@ -31,7 +30,7 @@ def kamehameha():
   insta.marca(sorteio)
   tecla.tab(1, "")
   tecla.esc()
-  tecla.fecha_janela(1)
+  tecla.fecha_janela(tempo = 1)
 
 if __name__ == "__main__":
   kamehameha()

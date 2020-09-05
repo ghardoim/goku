@@ -7,7 +7,7 @@ echo "Stage: Clean"
   fi
 
 echo "Stage: Build"
-  cxfreeze src/goku.py
+  cxfreeze goku.py
 
 echo "Stage: Clean Pós-Build"
   rm -r dist/lib/unittest
@@ -19,7 +19,7 @@ echo "Stage: Clean Pós-Build"
   rm -r dist/lib/xml
 
 echo "Stage: Copy Utils"
-  cp -r resource/ dist/
+  cp sorteio.json dist/
   cp README.md dist/README.md
 
 echo "Stage: Compile"

@@ -38,6 +38,10 @@ class Sorteio():
   @property
   def marcar(self):
     return self.__marcar
+
+  @marcar.setter
+  def marcar(self, nomes):
+    self.__marcar = nomes
   
   @property
   def toJson(self):

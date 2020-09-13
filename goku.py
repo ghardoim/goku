@@ -1,9 +1,12 @@
+import navegador as navegador
 from sorteio import Sorteio
 import instagram as insta
 import teclado as tecla
+import mouse as mouse
 
 sorteio = Sorteio("sorteio.json")
 browser = "edge"
+mouse.vai_pro_canto()
 
 def kaioken():
 
@@ -36,12 +39,16 @@ def kaioken():
   tecla.ctrl("l")
   tecla.escreve(tempo = 3, texto = f"instagram.com/{sorteio.eu}/")
   tecla.enter(tempo = 2)
-  tecla.ctrl("f")
-  tecla.escreve(3, "seguindo")
-  tecla.enter(tempo = 2)
-  tecla.esc()
+
+  navegador.procura("seguindo", tempo = 2)
+  quantidade = insta.quantos_sigo()
   tecla.enter(tempo = 1)
-  insta.get_amigos(quantos = 20)  
+  insta.carrega_amigos()
+
+  navegador.procura("seguindo", tempo = 2)
+  tecla.enter(tempo = 1)
+  sorteio.marcar = insta.get_amigos(quantos = quantidade)
+  sorteio.salvar
 
 def kamehameha():
 
@@ -61,14 +68,14 @@ def kamehameha():
   tecla.ctrl("f")
   tecla.escreve(3, "publicacoes")
   tecla.enter(tempo = 3)
-  tecla.esc()
+  tecla.esc(tempo = 1)
   insta.acha_sorteio(sorteio.publicacao)
   insta.marca(sorteio)
-  tecla.tab(1, "")
-  tecla.esc()
+  tecla.tab(1)
+  tecla.esc(tempo = 1)
   tecla.fecha_janela(tempo = 1)
 
 if __name__ == "__main__":
-  pass
+  # pass
   #kamehameha()
-  #kaioken()
+  kaioken()

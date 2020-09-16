@@ -21,9 +21,11 @@ echo "Stage: Copy Utils"
   cp sorteio.json dist/ && cp README.md dist/README.md
 
 echo "Stage: Deploy"
+  branch=$(git branch | grep \* | awk -F" " '{ print $2 }')
+  git push && git git switch master
   git tag -a "$novaTag" -m "Com meu KI atual, eu consigo saber quem você segue para eu marcar"
-  git merge $(git branch | grep \* | awk -F" " '{ print $2 }') master
-  git switch master && git push && git push --tags
+  git merge $branch
+  git push && git push --tags
 
 echo "Stage: Compile"
   tar -cf sayajin-v0.zip dist/

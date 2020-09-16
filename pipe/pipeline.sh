@@ -7,16 +7,18 @@ echo "Stage: Clean"
   fi
 
 echo "Stage: Build"
+  source .venv/Scripts/activate
   cxfreeze goku.py
+  deactivate
 
 echo "Stage: Clean Pós-Build"
-  rm -r dist/lib/unittest
-  rm -r dist/lib/tkinter
-  rm -r dist/lib/xmlrpc
-  rm -r dist/lib/email
-  rm -r dist/lib/html
-  rm -r dist/lib/http
-  rm -r dist/lib/xml
+  removeLibs="dist/lib"
+  rm -r $removeLibs/unittest
+  rm -r $removeLibs/tkinter
+  rm -r $removeLibs/xmlrpc
+  rm -r $removeLibs/email
+  rm -r $removeLibs/html
+  rm -r $removeLibs/xml
 
 echo "Stage: Copy Utils"
   cp sorteio.json dist/

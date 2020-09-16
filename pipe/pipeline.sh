@@ -6,7 +6,7 @@ echo "Stage: Clean"
     rm -r dist/
   fi
 
-echo "Stage: Build"
+echo "LStage: Build"
   source .venv/Scripts/activate
   cxfreeze goku.py
   deactivate
@@ -24,11 +24,12 @@ echo "Stage: Copy Utils"
   cp sorteio.json dist/
   cp README.md dist/README.md
 
-echo "Stage: push"
+echo "Stage: Deploy"
+  branch=$(git branch | grep \* | awk -F" " '{ print $2 }')
   git tag -a "$novaTag" -m "Com meu KI atual, eu consigo saber quem você segue para eu marcar"
-  git merge $(git branch | grep \* | awk -F" " '{ print $2 }') master
+  git merge master $branch
   git switch master
-  git push --tags
+  git push && git push --tags
 
 echo "Stage: Compile"
   tar -cf sayajin-v0.zip dist/

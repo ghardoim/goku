@@ -10,7 +10,7 @@ class Sorteio():
       self.__publicacao = sorteio["publicacao"]
       self.__comentarios = sorteio["comentarios"]
       self.__amigos = sorteio["amigos"]
-      self.__marcar = sorteio["marcar"]
+      self.__quem_marcar = sorteio["quem_marcar"]
   
   def __iter__(self):
     return iter(self)
@@ -36,12 +36,12 @@ class Sorteio():
     return self.__amigos
   
   @property
-  def marcar(self):
-    return self.__marcar
+  def quem_marcar(self):
+    return self.__quem_marcar
 
-  @marcar.setter
-  def marcar(self, nomes):
-    self.__marcar = nomes
+  @quem_marcar.setter
+  def quem_marcar(self, nomes):
+    self.__quem_marcar = nomes
   
   @property
   def toJson(self):
@@ -51,7 +51,7 @@ class Sorteio():
       "publicacao": self.publicacao,
       "comentarios": self.comentarios,
       "amigos": self.amigos,
-      "marcar": self.marcar
+      "quem_marcar": self.quem_marcar
     }
 
   @property

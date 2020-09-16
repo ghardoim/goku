@@ -41,13 +41,13 @@ def kaioken():
   tecla.enter(tempo = 2)
 
   navegador.procura("seguindo", tempo = 2)
-  quantidade = insta.quantos_sigo()
+  quantidade = insta.quantos_sigo(sorteio.eu)
   tecla.enter(tempo = 1)
   insta.carrega_amigos()
 
   navegador.procura("seguindo", tempo = 2)
   tecla.enter(tempo = 1)
-  sorteio.marcar = insta.get_amigos(quantos = quantidade)
+  sorteio.quem_marcar = insta.get_amigos(quantos = quantidade)
   sorteio.salvar
 
 def kamehameha():
@@ -56,7 +56,7 @@ def kamehameha():
   print("Levante as mãos e me ajude a fazer a genki dama enquanto eu faço uns comentários para vc!")
   print(sorteio)
   print("Vou comentar todos esses seus amigos aqui ->")
-  for amigo in sorteio.marcar:
+  for amigo in sorteio.quem_marcar:
     print("\t", amigo)
   print("O meu KI ainda não está bom, mas vou continuar treinando para melhorar isso!!")
   input("Aperte 'enter' e me dê a mão pra fugir desta terrível escuridão")

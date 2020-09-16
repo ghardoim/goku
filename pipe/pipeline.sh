@@ -22,4 +22,4 @@ echo "Stage: Deploy"
   git push --tags
 
 echo "Stage: Compile"
-  tar -cf sayajin-v0.zip dist/
+  tar -cf $novaTag.zip dist/

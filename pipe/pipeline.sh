@@ -11,14 +11,8 @@ echo "Stage: Build"
   cxfreeze goku.py
   deactivate
 
-echo "Stage: Clean Pós-Build"
-  removeLibs="dist/lib"
-  rm -r $removeLibs/unittest && rm -r $removeLibs/tkinter
-  rm -r $removeLibs/xmlrpc && rm -r $removeLibs/email
-  rm -r $removeLibs/html && rm -r $removeLibs/xml
-
 echo "Stage: Copy Utils"
-  cp sorteio.json dist/ && cp README.md dist/README.md
+  cp sorteio.json dist/
 
 echo "Stage: Deploy"
   branch=$(git branch | grep \* | awk -F" " '{ print $2 }')

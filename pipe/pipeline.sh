@@ -6,7 +6,7 @@ echo "Stage: Clean"
     rm -r dist/
   fi
 
-echo "LStage: Build"
+echo "Stage: Build"
   source .venv/Scripts/activate
   cxfreeze goku.py
   deactivate

@@ -13,23 +13,17 @@ echo "LStage: Build"
 
 echo "Stage: Clean Pós-Build"
   removeLibs="dist/lib"
-  rm -r $removeLibs/unittest
-  rm -r $removeLibs/tkinter
-  rm -r $removeLibs/xmlrpc
-  rm -r $removeLibs/email
-  rm -r $removeLibs/html
-  rm -r $removeLibs/xml
+  rm -r $removeLibs/unittest && rm -r $removeLibs/tkinter
+  rm -r $removeLibs/xmlrpc && rm -r $removeLibs/email
+  rm -r $removeLibs/html && rm -r $removeLibs/xml
 
 echo "Stage: Copy Utils"
-  cp sorteio.json dist/
-  cp README.md dist/README.md
+  cp sorteio.json dist/ && cp README.md dist/README.md
 
 echo "Stage: Deploy"
-  branch=$(git branch | grep \* | awk -F" " '{ print $2 }')
   git tag -a "$novaTag" -m "Com meu KI atual, eu consigo saber quem você segue para eu marcar"
-  git merge master $branch
-  git switch master
-  git push && git push --tags
+  git merge $(git branch | grep \* | awk -F" " '{ print $2 }') master
+  git switch master && git push && git push --tags
 
 echo "Stage: Compile"
   tar -cf sayajin-v0.zip dist/

@@ -22,7 +22,7 @@ echo "Stage: Copy Utils"
 
 echo "Stage: Deploy"
   branch=$(git branch | grep \* | awk -F" " '{ print $2 }')
-  git push && git git switch master
+  git push && git switch master
   git tag -a "$novaTag" -m "Com meu KI atual, eu consigo saber quem você segue para eu marcar"
   git merge $branch
   git push && git push --tags

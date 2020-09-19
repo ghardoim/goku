@@ -25,27 +25,14 @@ class Application(tela.Frame):
     frase = tela.Label(self.__master, text = "Vamos ganhar um sorteio!", fg = "black", bg = "white")
     frase.pack(side = "top")
 
-    nome = tela.Label(self.__master, text = "Qual o seu nome?", fg = "black", bg = "white")
-    nome.pack()
-    nome = tela.Entry(self.__master, bg = "lightgray")
-    nome.pack()
+    nome = self.cria_input("Qual o seu nome?")
+    pagina = self.cria_input("Qual é a página do sorteio?")
+    amigos = self.cria_input("Quantos amigos você quer marcar por comentário?")
+    comentarios = self.cria_input("Quantos comentários quer fazer?")
 
-    pagina = tela.Label(self.__master, text = "Qual é a página do sorteio?", fg = "black", bg = "white")
-    pagina.pack()
-    pagina = tela.Entry(self.__master, bg = "lightgray")
-    pagina.pack()
-
-    amigos = tela.Label(self.__master, text = "Quantos amigos você quer marcar por comentário?", fg = "black", bg = "white")
-    amigos.pack()
-    amigos = tela.Entry(self.__master, bg = "lightgray")
-    amigos.pack()
-
-    comentarios = tela.Label(self.__master, text = "Quantos comentários quer fazer?", fg = "black", bg = "white")
-    comentarios.pack()
-    comentarios = tela.Entry(self.__master, bg = "lightgray")
-    comentarios.pack()
-
-    # nome = tela.Label(self.__master, text = "Qual o seu nome?", fg = "black", bg = "white")
-    # nome.pack()
-    # nome = tela.Entry(self.__master, bg = "lightgray")
-    # nome.pack()
+  def cria_input(self, mensagem):
+    campo = tela.Label(self.__master, text = mensagem, fg = "black", bg = "white")
+    campo.pack()
+    campo = tela.Entry(self.__master, bg = "lightgray")
+    campo.pack()
+    return campo

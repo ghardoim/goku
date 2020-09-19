@@ -1,5 +1,6 @@
 import navegador as navegador
 from sorteio import Sorteio
+from app import Application
 import instagram as insta
 import teclado as tecla
 import mouse as mouse
@@ -10,7 +11,6 @@ mouse.vai_pro_canto()
 
 def kaioken():
 
-  print("Oi, eu sou o Goku!")
   print(r"                    `\-.   `                                         ")
   print(r"                      \ `.  `                                        ")
   print(r"                       \  \ |                                        ")
@@ -52,7 +52,6 @@ def kaioken():
 
 def kamehameha():
 
-  print("Oi, eu sou o Goku!")
   print("Levante as mãos e me ajude a fazer a genki dama enquanto eu faço uns comentários para vc!")
   print(sorteio)
   print("Vou comentar todos esses seus amigos aqui ->")
@@ -75,7 +74,10 @@ def kamehameha():
   tecla.esc(tempo = 1)
   tecla.fecha_janela(tempo = 1)
 
+import time
 if __name__ == "__main__":
-  # pass
+  #pass
   #kamehameha()
-  kaioken()
+  #kaioken()
+  goku = Application()
+  goku.mainloop()

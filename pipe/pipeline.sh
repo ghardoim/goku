@@ -13,6 +13,7 @@ echo "Stage: Build"
 
 echo "Stage: Copy Utils"
   cp sorteio.json dist/
+  cp -r img/ dist/
 
 echo "Stage: Deploy"
   branch=$(git branch | grep \* | awk -F" " '{ print $2 }')

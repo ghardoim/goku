@@ -18,12 +18,11 @@ def Ouve():
 
 def Fala(fala):
   
-  print(f"{fala}")
   speech = gravar(text = fala, lang = 'pt')
   speech.save(music_file)
+
+  print(f"{fala}")
   play(music_file)
 
-def delete_file():
-
   time.sleep(2)
-  system.remove(music_file)
+  system.remove(music_file)  

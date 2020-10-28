@@ -19,7 +19,7 @@ echo "Stage: Deploy"
   branch=$(git branch | grep \* | awk -F" " '{ print $2 }')
   git push && git switch master
   git merge $branch && git push
-  git tag -a "$novaTag" -m "Com meu KI atual, eu consigo saber quem você segue para eu marcar"
+  git tag -a "$novaTag" -m "Com meu KI atual, estou aprendendo a ouvir e falar!"
   git push --tags
 
 echo "Stage: Compile"

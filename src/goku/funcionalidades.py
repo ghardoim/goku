@@ -1,6 +1,5 @@
-import navegador as navegador
-import instagram as insta
-import teclado as tecla
+from src.controller import navegador, insta
+import src.friday.hands.teclado as tecla
 
 def kaioken(browser, sorteio):
 

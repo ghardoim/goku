@@ -1,6 +1,6 @@
+import src.friday.hands.teclado as tecla
 import requests as request
 import pyperclip as clip
-import teclado as tecla
 import time as time
 import re as regex
 

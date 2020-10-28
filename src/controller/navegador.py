@@ -1,4 +1,4 @@
-import teclado as tecla
+import src.friday.hands.teclado as tecla
 
 def procura(texto, tempo):
   tecla.ctrl("f")

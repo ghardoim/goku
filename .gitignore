@@ -1,5 +1,8 @@
-#recursos lidos do txt
-notas.txt
+#arquivos com informações cravadas
+*/backup/*
+!*/backup/.gitkeep
+*/music/*
+!*/music/.gitkeep
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

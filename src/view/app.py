@@ -1,5 +1,5 @@
+import src.goku.funcionalidades as atk
 from PIL import ImageTk, Image
-import funcionalidades as atk
 import tkinter as tela
 
 class Application(tela.Frame):
@@ -19,7 +19,7 @@ class Application(tela.Frame):
     self.__master.minsize(600, 250)
 
   def imagem(self):
-    foto = ImageTk.PhotoImage(Image.open("img/goku.png"))
+    foto = ImageTk.PhotoImage(Image.open("resource/img/goku.png"))
     img = tela.Label(self.__master, image = foto)
     img.image = foto
     img.pack(side = "right")

@@ -1,4 +1,4 @@
-import src.goku.funcionalidades as atk
+import src.friday.body.moves as atk
 from PIL import ImageTk, Image
 import tkinter as tela
 

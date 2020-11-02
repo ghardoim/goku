@@ -31,3 +31,10 @@ def kamehameha(browser, sorteio):
   tecla.tab(1)
   tecla.esc(tempo = 1)
   tecla.fecha_janela(tempo = 1)
+
+def pesquisa_google(texto):
+  tecla.abre_janela("edge")
+  tecla.enter(tempo = 1)
+  tecla.ctrl("l")
+  tecla.escreve(2, texto)
+  tecla.enter(tempo = 1)
